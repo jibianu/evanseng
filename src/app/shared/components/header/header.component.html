@@ -1,0 +1,48 @@
+<header>
+    <nav class="nav navbar navbar-expand-sm navbar-light">
+        <button
+            #menuBtn
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            (click)="checkMenuStatus()" [style.color]="isMenuClicked?'black':'white'"
+        > <i class="bi" [ngClass]="isMenuClicked ? 'bi-x-lg' : 'bi-list'"></i></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav custom-nav-bar">
+                <ng-container *ngFor="let link of menuLinkList">
+                    <li class="nav-item" *ngIf="!link.parent && !link.children.length">
+                        <a class="nav-link active" [href]="link.url" [id]="'menu' + link.id" aria-current="page"
+                            >{{link.label}} <span class="visually-hidden">(current)</span></a
+                        >
+                    </li> 
+                    <li class="nav-item dropdown toggler-dropdown" *ngIf="link.children.length" [id]="'dropdownId_' + link.id">
+                        <div class="mobile-dropdown-toggle">
+                            <span class="d-sm-block px-2 d-lg-none" (click)="triggerDropdown($event)">
+                                <i class="bi bi-caret-down-fill"></i>
+                            </span> 
+                            <a
+                                class="nav-link dropdown-custom"
+                                [href]="link.url"
+                                (click)="link.shouldRoute ? null : $event.preventDefault()"
+                                role="button"
+                                #dropdownId
+                                >
+                                {{link.label}}
+                            </a>
+                        </div>
+                        <div class="dropdown-menu col-xs-12" [id]="'dropdownMenu_' + link.id"  aria-labelledby="dropdownId">
+                            <a *ngFor='let child of link.children | arrayFilter : menuLinkList' class="dropdown-item" [href]="child.url">
+                              {{child.label}}
+                            </a>
+                        </div>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </nav>
+    
+</header>
