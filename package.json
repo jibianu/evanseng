@@ -1,9 +1,6 @@
 {
   "name": "evans",
   "version": "0.0.0",
-  "engines" : { 
-    "node" : "16.20.2"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
