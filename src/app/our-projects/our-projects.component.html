@@ -1,0 +1,16 @@
+<section class="about-banner">
+    <div class="about-banner">
+         <h2 class="secondary-header">{{pageHeading}}</h2>
+    </div>
+     <div class="banner-background-small"></div>
+ </section>
+<section class="projects-section common-margin col-12">
+    <h3 class="secondary-header">{{subHeading}}</h3>
+    <div class="projects-gallery container mt-5 mb-5 col-xl-6 col-lg-10 col-xs-12">
+        <div class="project-card px-4 mb-3" *ngFor="let project of projectsList">
+            <i class="bi bi-caret-right-fill"></i>
+            <h4>{{project.name}} - {{project.project}}</h4>
+        </div>
+    </div>
+</section>
+  

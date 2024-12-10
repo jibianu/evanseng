@@ -1,0 +1,46 @@
+<section class="service-banner">
+    <h2 class="secondary-header">Services</h2>
+</section>
+<section class="services-top container mt-5">
+    <div class="service-message">
+        <h2 class="service-title"><span>Evans Engineering</span>: Commercial and Industrial Electrical Works</h2>
+        <p class="mt-5 col-lg-10 col-xl-10 col-xs-12">
+            Since our inception, we have had the privilege of working with a diverse range of
+            customers on a wide variety of projects, from electrical installations in residential
+            buildings to large-scale commercial and industrial endeavors. Our collaborations extend
+            to building contractors, planning engineers, architects, major project management firms,
+            and end clients, each with unique needs and expectations
+        </p>
+        <p class="col-lg-10 col-xl-10 col-xs-12">
+            We are deeply committed to building strong, lasting relationships with our customers. By
+            earning their trust and consistently exceeding their expectations through exceptional
+            workmanship, we aim to deliver results that set new benchmarks in quality and
+            reliability.
+        </p>
+    </div>
+    <div class="services-image-top mt-5 col-xs-12">
+        <img src="assets/images/demo/3.avif">
+    </div>
+</section>
+<section class="services-bottom container mt-5">
+    <h3 class="secondary-header">
+       What We Known For
+    </h3>
+    <div class="services-board mt-5">
+        <div class="card col-lg-3 col-xl-3 col-xs-10" *ngFor="let service of servicesList">
+            <img class="card-icon" [src]="'assets/images/icons/' + service.image">
+            <div class="card-body">
+                <h4 class="card-title text-center">{{service.title}}</h4>
+                <p class="card-text">{{service.description}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta mt-5 px-5">
+    <div class="cta-text col-lg-8 col-xs-12">
+        Looking for high quality Electricians for your project Residential, Industrial Hotels & Resorts? Call Now
+    </div>
+    <button class="btn cta-button col-lg-2 col-xs-12">
+        Contact Us
+    </button>
+</section>
