@@ -10,6 +10,7 @@
     "dev:ssr": "ng run Evans:serve-ssr",
     "serve:ssr": "node dist/Evans/server/main.js",
     "build:ssr": "ng build && ng run Evans:server",
+    "build-prod": "ng build --configuration production",
     "prerender": "ng run Evans:prerender"
   },
   "private": true,
